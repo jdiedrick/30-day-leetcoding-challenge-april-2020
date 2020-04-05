@@ -1,3 +1,7 @@
+"""
+Got some hints from: https://www.youtube.com/watch?v=XPCXGT4u6Qc
+"""
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         
