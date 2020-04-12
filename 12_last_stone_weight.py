@@ -1,5 +1,19 @@
+import heapq
+
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
+        h = []
+        for s in stones:
+            heapq.heappush(h, -s)
+            
+        while len(h) >= 2:
+            first_heaviest_stone = heapq.heappop(h)
+            second_heaviest_stone = heapq.heappop(h)
+            difference = first_heaviest_stone - second_heaviest_stone
+            heapq.heappush(h, difference)
+        return -h[0]
+
+    def lastStoneWeight_sort(self, stones: List[int]) -> int:
         while len(stones) > 1:
             stones.sort()
             first_heaviest_stone = stones[-1]
