@@ -6,7 +6,7 @@ class Solution:
                 total_shift -= sh[1]
             else:
                 total_shift += sh[1]
-        print(total_shift)
+
         if total_shift > 0:
             return Solution.shiftRight(s, total_shift)
         else:
